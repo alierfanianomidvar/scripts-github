@@ -103,8 +103,43 @@ The git stash command shelves changes you have made to your working copy so you 
 
 ## Undoing changes
 
-The git stash command shelves changes you have made to your working copy so you can do another work or to change branches, and then come back and re-apply them.
+To undo the changes you have made, there are several commands available, here some of them:
 
-- Save modified and staged changes :
+- Create new commit that undoes the changes made in a previous commit, then apply it to the current branch:
 
-        git stash
+        git revert
+
+- Remove <file> from the staging area, but leave the working directory unchanged.
+This upstages a file without overwriting any changes. You can choose to reset to a specific commit, 
+or to undo all changes since a certain commit. This command modifies the commit history, 
+so it should be used with caution:
+        
+        git reset
+
+- For permanently delete untracked files from your working directory: 
+      
+        git clean
+
+  - Before using this command you can use 'git clean -n', this command only shows the list
+  untracked files in your system. So its better before using  git clean, use this command. 
+
+
+
+## GIT BRANCHES
+
+In Git, a branch is a separate line of development that allows you to work on a feature or bug fix without affecting 
+the main code base. Each branch represents a snapshot of the code at a particular point in time.
+
+When you create a branch, you essentially create a copy of the code base that 
+you can modify without affecting the main branch. You can switch between branches, merge branches, 
+and delete branches as needed.
+
+- For seeing the list of all branches:
+
+        git branch
+- Creating new branch and moving to new branch:
+
+        git checkout -b <branch name>
+- For switching between branches:
+
+        git checkout
