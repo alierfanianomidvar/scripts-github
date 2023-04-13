@@ -130,6 +130,9 @@ and delete branches as needed.
 - For switching between branches:
 
         git checkout
+- For updation branch name:
+
+        git branch -m <new-branch-name>        
 
 ## GIT Remote Repository
 
@@ -267,4 +270,8 @@ To undo the changes you have made, there are several commands available, here so
       your changes will be uploaded to the remote repository.
     - If there are still conflicts, repeat the process of resolving conflicts,
       adding changes to the staging area, committing changes, and pushing changes until all conflicts are resolved.
+      
+- How to add and push a empty folder on repository?
+    - Create a .gitKeep inside the folder and after you can add and push the folder inside your repo.
+    
 
