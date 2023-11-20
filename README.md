@@ -240,6 +240,11 @@ To undo the changes you have made, there are several commands available, here so
     - Before using this command you can use 'git clean -n', this command only shows the list
       untracked files in your system. So it's better before using git clean, use this command.
 
+- If you want to change the last commit message in Git before pushing it, you can use the following command:
+
+        git commit --amend -m "New commit message"
+
+
 ## Streamlining Your Workflow
 
 - Interactively rebase current branch onto <base>. Launches editor to enter commands for how each commit will
@@ -273,5 +278,33 @@ To undo the changes you have made, there are several commands available, here so
       
 - How to add and push a empty folder on repository?
     - Create a .gitKeep inside the folder and after you can add and push the folder inside your repo.
+ 
+- What will happen if commit to commit but i want to cahnge the first one?
+    - If you want to change a commit that is not the most recent commit in Git, you will need to perform an interactive rebase to rewrite the commit history. Here are the general steps to achieve this:
+
+    - Open a terminal and navigate to the root directory of your Git repository.Use the following command to start an interactive rebase session:
+
+            git rebase -i HEAD~n
+
+    - Replace n with the number of commits you want to go back. For example, if you want to edit the first commit, use 1. This will open a text editor with a list of commits. In the text editor that appears, replace the word "pick" with "edit" (or just "e") for the commit you want to modify (in this case, it's the first one).Save and close the text editor.
+    - Git will now replay the commits up to the one you want to edit and stop at that commit, allowing you to make changes.
+    - Make the necessary changes to your files.
+    - Stage the changes using git add:
+
+            git add <your_modified_files>
+
+    - Amend the commit with your changes:
+
+            git commit --amend
+        - This will open the text editor again. Update the commit message if needed, save, and close the text editor.
+
+    - Continue the rebase:
+
+            git rebase --continue
+      
+    - Git will apply the remaining commits on top of the modified one.
+ 
+
+
     
 
