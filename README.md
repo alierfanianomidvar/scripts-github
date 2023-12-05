@@ -4,7 +4,7 @@ GitHub cheat sheet
 
 ## SETUP
 
-You must set a clear name to easier for your teammate to identify you
+You must set a clear name to be easier for your teammate to identify you
 
 - Set up your name :
 
