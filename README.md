@@ -258,6 +258,40 @@ To undo the changes you have made, there are several commands available, here so
 
         git push origin '<branch name>'
 
+
+## Git best practices
+
+### Commit messages >
+
+- `Concise and Specific`: Commit messages should be brief yet descriptive. Ideally, they should convey the purpose of the changes made.
+
+- `Use the Imperative Mood`: Start the commit message with an imperative verb like "Add", "Fix", "Update", "Remove", etc. For example, "Fix bug in payment gateway" or "Add new API endpoint for user profiles".
+
+- `Capitalize the First Letter`: Begin the commit message with a capitalized letter.
+
+- `Do Not End with a Period`: Commit messages typically do not end with a period.
+
+- `Include Context`: If applicable, include a ticket number or context (like a feature or module name) in the commit message.
+
+- `Detailed Description (Optional)`: For complex changes, you may add a detailed description in the commit message after a blank line following the short description. This is optional but recommended for complex commits.
+
+        git commit -m "normal commit part" -m "Deatiled description part"
+
+## Branch Naming Conventions
+
+- `Consistent Structure`: Decide on a structure and stick to it. Common structures include using prefixes such as feature/, bugfix/, hotfix/, or release/.
+
+- `Short and Descriptive`: Branch names should be brief but descriptive. For example, feature/user-authentication, bugfix/login-error.
+
+- `Use Hyphens to Separate Words`: Use hyphens instead of spaces or underscores. For example, refactor-checkout-process.
+
+- `Include Issue or Ticket Numbers`: If you're using a ticketing system, include the issue or ticket number in the branch name. For example, feature/123-add-search-functionality.
+
+- `Avoid Sensitive Words`: Do not use offensive or insensitive language in branch names.
+
+- `Lowercase Letters`: Use lowercase letters for branch names to avoid case sensitivity issues.
+
+  
 ### QUESTIONS
 
 - How to resolve conflicts when pushing changes to a remote repository?
@@ -279,7 +313,7 @@ To undo the changes you have made, there are several commands available, here so
 - How to add and push a empty folder on repository?
     - Create a .gitKeep inside the folder and after you can add and push the folder inside your repo.
  
-- What will happen if commit to commit but i want to cahnge the first one?
+- What will happen if commit not only one but few commits but i want to change the first one?
     - If you want to change a commit that is not the most recent commit in Git, you will need to perform an interactive rebase to rewrite the commit history. Here are the general steps to achieve this:
 
     - Open a terminal and navigate to the root directory of your Git repository.Use the following command to start an interactive rebase session:
