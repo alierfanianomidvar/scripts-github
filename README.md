@@ -71,12 +71,19 @@ The classic expression of "saving" is similar to the Git term "committing".
 
     2. diff of what is staged but not yet committed :
 
-           git diff --staged
+           git diff --staged or git diff --cached
+
 
   The git diff is a multi-function Git command, which is used to compare changes committed in Git. Particularly, with
   the help of this command you can take two input data sets and output the modifications between them.
 
   ex -> https://www.freecodecamp.org/news/git-diff-command/
+
+ - The difference between git diff --cached (or its synonym git diff --staged) and git diff lies in what changes they compare:
+
+      - git diff without any arguments displays the changes between the working directory and the index (staging area). This shows what has been changed, but is not yet prepared to be committed.
+
+      - git diff --cached or git diff --staged shows the difference between the staged changes (in the index) and the last commit. It shows what has been added to the staging area and is ready for the next commit compared to the last commit you made.
 
 ## STASH
 
