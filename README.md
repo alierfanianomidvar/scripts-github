@@ -291,7 +291,35 @@ To undo the changes you have made, there are several commands available, here so
 
 - `Lowercase Letters`: Use lowercase letters for branch names to avoid case sensitivity issues.
 
+
+
+## Git Hooks: Automation and Custom Scripts in Workflow Management
+
+Git hooks are scripts that Git executes before or after events such as: `commit`, `push`, and `receive`. They're a powerful tool for customizing Git's internal behavior and triggering customizable actions at key points in the development life cycle.
+
+Git hooks are placed in the `hooks` subdirectory of the `.git` directory in a repository. By default, Git provides several sample hooks in a new repository, all of which are named as `<hookname>.sample`. To activate a hook, you rename the appropriate `.sample` file by removing the `.sample` extension and ensure that the script is executable.
+
+Here are some of the most commonly used Git hooks:
+
+- `pre-commit`: Runs during `git commit`, before the commit message editor is fired up. It's typically used to run linters, code formatters, or other tools that could validate the snapshot of code that's about to be committed.
   
+- `commit-msg`: Invoked after the commit message has been entered but before the commit is completed. It's commonly used to validate or format commit messages.
+  
+- `pre-push`: Executes during `git push`, after the remote refs have been updated but before any objects have been transferred. It can be used to run tests or any other pre-push checks.
+  
+- `pre-receive`: Runs on the server side before a push is accepted. It can be used to enforce project standards or to run tests.
+  
+- `post-receive`: Executes on the server after a push has been accepted. It's often used to update other systems or notify CI/CD to start builds.
+
+Using Git hooks can greatly increase productivity and maintain code quality by automating checks and balances. However, because hooks are executed on the local machine, any automated checks that are necessary to maintain code quality in the repository should also be implemented in a continuous integration system, which doesn't rely on client-side hooks.
+
+Hooks can be written in any scripting language that your system can execute. It's important to note that hooks are not copied when you clone a repository, as they are a part of the `.git` directory. This is a security measure to prevent arbitrary code execution when cloning a repository.
+
+
+#### State dependent environment changes:
+```Text
+This involves changes that are dependent on the state of the environment or the system, which might not be practical or reliable to handle with a Git hook, especially since hooks are not designed to manage environment states and might not have the necessary context to perform such actions.
+```
 ### QUESTIONS
 
 - How to resolve conflicts when pushing changes to a remote repository?
