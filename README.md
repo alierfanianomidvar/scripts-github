@@ -226,9 +226,14 @@ To undo the changes you have made, there are several commands available, here so
 
         git rest --soft
 
+  - In other word the soft reset (git reset --soft) moves the current HEAD to the specified commit,
+    but does not change the index or the working directory. This means that the changes from the commits that are "removed" are kept in the staging area, ready to be re-committed if necessary.
+
 - Reset staging area and working director to the last commit and overwrite all the changes:
 
         git rest --hard
+  - In the other word a hard reset (git reset --hard), on the other hand, moves the HEAD to the specified commit and also updates the index and working directory to match that commit.
+    This effectively discards any changes in the staging area and working directory that were made after the commit you reset to.
 
 > If you change your mind after using Git Reset, you can still restore the previous state of your repository by using
 > the Git Reflog command.
