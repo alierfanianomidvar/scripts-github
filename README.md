@@ -195,6 +195,23 @@ and delete branches as needed.
 
         git reflog
 
+- To mark specific points in the history:
+
+  - A `git tag` is a mechanism in Git to mark specific points in a repository's history as important. Typically, this functionality is used to mark release points (v1.0, v2.0 and so on).
+
+  - There are two types of tags in Git:
+
+    1. **Lightweight Tags**: These are essentially bookmarks to a commit; a pointer to a specific commit. Lightweight tags are created with the absence of the `-a`, `-s`, or `-m` options and do not contain any extra information beyond the commit itself.
+
+    2. **Annotated Tags**: These are stored as full objects in the Git database. They are checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard (GPG). Annotated tags are created with the `-a` option and are meant for release while lightweight tags are more for private or temporary object labels.
+
+   - Here's how you might create each type of tag:
+
+      - **Lightweight Tag**: `git tag v1.0`
+      - **Annotated Tag**: `git tag -a v1.0 -m "Release 1.0"`
+
+Tags are not automatically transferred when you `git push`. You have to push tags to a remote repository explicitly with `git push origin <tagname>` or `git push --tags` to transfer all at once. Similarly, they have to be explicitly fetched with `git fetch --tags` from a remote repository.      
+
 ## Visualizing Code Changes
 
 - To display the difference between the last commit and working directory:
