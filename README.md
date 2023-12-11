@@ -36,7 +36,7 @@ repository, so this is usually the first command you'll run in a new project.
 
 git clone is primarily used to point to an existing repo and make a clone or copy of that repo at in a new directory, at
 another location. The original repository can be located on the local filesystem or on remote machine accessible
-supported protocols. The git clone command copies an existing Git repository.
+supported protocols. The git clone command copies an existing Git repository.(git clone will create near exact copy ofentire repo).
 
 #### git clone vs git init
 
